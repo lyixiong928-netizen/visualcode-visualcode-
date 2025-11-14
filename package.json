@@ -1,0 +1,60 @@
+{
+  "name": "visualcode-chat-codingpair",
+  "displayName": "Visual Code Chat Coding Pair",
+  "description": "重度使用者的聊天編碼配對與設計管理工具 / Chat coding pair and design management tool for heavy users",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:visualcode.startCodingPair",
+    "onCommand:visualcode.openDesignManagement"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "visualcode.startCodingPair",
+        "title": "開始編碼配對 / Start Coding Pair"
+      },
+      {
+        "command": "visualcode.openDesignManagement",
+        "title": "設計管理 / Design Management"
+      },
+      {
+        "command": "visualcode.heavyUserOptimizations",
+        "title": "重度使用優化 / Heavy User Optimizations"
+      }
+    ],
+    "configuration": {
+      "title": "Visual Code Chat Coding Pair",
+      "properties": {
+        "visualcode.heavyUser.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "啟用重度使用者優化 / Enable heavy user optimizations"
+        },
+        "visualcode.codingPair.autoConnect": {
+          "type": "boolean",
+          "default": false,
+          "description": "自動連接編碼配對 / Auto-connect to coding pair"
+        },
+        "visualcode.designManagement.syncEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "啟用設計管理同步 / Enable design management sync"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "test": "node test/runTests.js",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  }
+}
